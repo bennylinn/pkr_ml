@@ -24,31 +24,32 @@ if __name__ == '__main__':
 
     for p in players: t.addPlayer(p)
 
-    #train Player 1 for 10000 hands, training once
-    players[0].startTraining()
-    simulate(t, nHands=10000, nTrain=1000, nBuyIn=10)   
-    players[0].stopTraining()
-    
-    #train Player 2 for 2000 hands, training every 1000 hands
-    players[1].startTraining()
-    simulate(t, nHands=10000, nTrain=1000, nBuyIn=10)   
-    players[1].stopTraining()
+    for i in range(10):
+        #train Player 1 for 10000 hands, training once
+        players[0].startTraining()
+        simulate(t, nHands=1000, nTrain=1000, nBuyIn=10)   
+        players[0].stopTraining()
+        
+        #train Player 2 for 2000 hands, training every 1000 hands
+        players[1].startTraining()
+        simulate(t, nHands=1000, nTrain=1000, nBuyIn=10)   
+        players[1].stopTraining()
 
-    players[2].startTraining()
-    simulate(t, nHands=10000, nTrain=1000, nBuyIn=10)   
-    players[2].stopTraining()
+        players[2].startTraining()
+        simulate(t, nHands=1000, nTrain=1000, nBuyIn=10)   
+        players[2].stopTraining()
 
-    players[3].startTraining()
-    simulate(t, nHands=10000, nTrain=1000, nBuyIn=10)   
-    players[3].stopTraining()
+        players[3].startTraining()
+        simulate(t, nHands=1000, nTrain=1000, nBuyIn=10)   
+        players[3].stopTraining()
 
-    players[4].startTraining()
-    simulate(t, nHands=10000, nTrain=1000, nBuyIn=10)   
-    players[4].stopTraining()
+        players[4].startTraining()
+        simulate(t, nHands=1000, nTrain=1000, nBuyIn=10)   
+        players[4].stopTraining()
 
-    players[5].startTraining()
-    simulate(t, nHands=10000, nTrain=1000, nBuyIn=10)   
-    players[5].stopTraining()
+        players[5].startTraining()
+        simulate(t, nHands=1000, nTrain=1000, nBuyIn=10)   
+        players[5].stopTraining()
 
     for p in players: p.setBankroll(10**6)
 

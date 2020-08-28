@@ -27,6 +27,34 @@ if __name__ == '__main__':
     #players cash out/ buy in every 'nBuyIn' hands
     #table narrates each hands if 'vocal' is True
     simulate(t, nHands=10000, firstTrain=2000, nTrain=1000, nBuyIn=10)
+    #train all players 10 times for 1000 hands each
+    for i in range(40):
+        #train Player 1 for 10000 hands, training once
+        players[0].startTraining()
+        simulate(t, nHands=1000, nTrain=1000, nBuyIn=10)   
+        players[0].stopTraining()
+        
+        #train Player 2 for 2000 hands, training every 1000 hands
+        players[1].startTraining()
+        simulate(t, nHands=1000, nTrain=1000, nBuyIn=10)   
+        players[1].stopTraining()
+
+        players[2].startTraining()
+        simulate(t, nHands=1000, nTrain=1000, nBuyIn=10)   
+        players[2].stopTraining()
+
+        players[3].startTraining()
+        simulate(t, nHands=1000, nTrain=1000, nBuyIn=10)   
+        players[3].stopTraining()
+
+        players[4].startTraining()
+        simulate(t, nHands=1000, nTrain=1000, nBuyIn=10)   
+        players[4].stopTraining()
+
+        players[5].startTraining()
+        simulate(t, nHands=1000, nTrain=1000, nBuyIn=10)   
+        players[5].stopTraining()
+    
     simulate(t, nHands=20, nBuyIn=10, vocal=True)
 
     
